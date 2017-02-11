@@ -18,9 +18,11 @@ requirements:
     - toolchain
     - gmp
     - mpfr
+    - ntl
   run:
     - gmp
     - mpfr
+    - ntl
 
 test:
   commands:
