@@ -6,7 +6,7 @@ chmod +x configure
 # tests to completion without timeouts.
 echo "int flint_test_multiplier(){return 1;}" > test_helpers.c
 
-./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX
+./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --with-ntl=$PREFIX
 make
 make check
 make install
