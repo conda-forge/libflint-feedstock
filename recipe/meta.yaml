@@ -16,12 +16,12 @@ build:
 requirements:
   build:
     - toolchain
-    - gmp
-    - mpfr
+    - gmp >=5.0.1,<7
+    - mpfr 3.*
     - ntl
   run:
-    - gmp
-    - mpfr
+    - gmp >=5.0.1,<7
+    - mpfr 3.*
     - ntl
 
 test:
