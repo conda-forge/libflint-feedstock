@@ -1,10 +1,7 @@
-:: Configure.
-
-dir
-
 mkdir build
 cd build
 
+:: Configure.
 cmake -G "Ninja" ^
       -D CMAKE_BUILD_TYPE=Release ^
       -D BUILD_SHARED_LIBS=ON ^
