@@ -22,7 +22,7 @@ requirements:
     - toolchain  # [unix]
     - gmp >=5.0.1,<7  # [unix]
     - mpfr 3.*
-    - ntl  # [win]
+    - ntl  # [unix]
     - mpir 3.*  # [win]
     - cmake  # [win]
     - ninja  # [win]
@@ -30,7 +30,7 @@ requirements:
     - gmp >=5.0.1,<7  # [unix]
     - mpir 3.*  # [win]
     - mpfr 3.*
-    - ntl  # [win]
+    - ntl  # [unix]
     - vc 14
 
 test:
