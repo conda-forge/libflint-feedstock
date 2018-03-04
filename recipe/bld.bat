@@ -14,5 +14,5 @@ cmake -G "Ninja" ^
 if errorlevel 1 exit 1
 
 :: Build.
-cmake --build %SRC_DIR% --target INSTALL --config Release
+cmake --build . --target install
 if errorlevel 1 exit 1
