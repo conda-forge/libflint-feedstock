@@ -18,11 +18,11 @@ requirements:
     - toolchain
     - gmp >=5.0.1,<7
     - mpfr 4.*
-    - ntl
+    - ntl 10.3.*
   run:
     - gmp >=5.0.1,<7
     - mpfr 4.*
-    - ntl
+    - ntl 10.3.*
 
 test:
   commands:
