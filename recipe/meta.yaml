@@ -12,10 +12,13 @@ source:
 build:
   number: 2
   skip: true        # [win]
+  run_exports:
+    - {{ pin_subpackage('libflint', max_pin='x.x') }}
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+  host:
     - gmp
     - mpfr
     - ntl
