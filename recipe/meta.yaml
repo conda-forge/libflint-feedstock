@@ -10,18 +10,22 @@ source:
   sha256: cbf1fe0034533c53c5c41761017065f85207a1b770483e98b2392315f6575e87
 
 build:
-  number: 1
+  number: 2
   skip: true        # [win]
+  run_exports:
+    - {{ pin_subpackage('libflint', max_pin='x.x') }}
 
 requirements:
   build:
-    - toolchain
-    - gmp >=5.0.1,<7
-    - mpfr 3.*
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - gmp
+    - mpfr
     - ntl
   run:
-    - gmp >=5.0.1,<7
-    - mpfr 3.*
+    - gmp
+    - mpfr
     - ntl
 
 test:
@@ -40,3 +44,4 @@ about:
 extra:
   recipe-maintainers:
     - isuruf
+    - saraedum
