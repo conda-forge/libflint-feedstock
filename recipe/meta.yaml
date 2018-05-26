@@ -17,11 +17,11 @@ requirements:
   build:
     - toolchain
     - gmp
-    - mpfr 4.*
+    - mpfr
     - ntl
   run:
     - gmp
-    - mpfr 4.*
+    - mpfr
     - ntl
 
 test:
