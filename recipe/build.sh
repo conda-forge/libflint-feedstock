@@ -15,6 +15,6 @@ fi
 echo "int flint_test_multiplier(){return 1;}" > test_helpers.c
 
 ./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --with-ntl=$PREFIX
-make
-make check
+make -j${CPU_COUNT}
 make install
+make check -j${CPU_COUNT}
