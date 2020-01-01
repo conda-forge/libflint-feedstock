@@ -2,12 +2,12 @@
 
 chmod +x configure
 
-if [[ "$cxx_compiler" == "toolchain_cxx" ]]; then
-    export CFLAGS="$CFLAGS -ansi -pedantic -Wall -O2 -funroll-loops -g -mpopcnt -Wno-unknown-pragmas"
-    export CXXFLAGS="$CXXFLAGS -std=c++11 -pedantic -Wall -O2 -funroll-loops -g -mpopcnt -Wno-unknown-pragmas"
-else
-    export CFLAGS="$CFLAGS -funroll-loops -g -mpopcnt -Wno-unknown-pragmas"
-    export CXXFLAGS="$CXXFLAGS -funroll-loops -g -mpopcnt -Wno-unknown-pragmas"
+export CFLAGS="$CFLAGS -funroll-loops -g -Wno-unknown-pragmas"
+export CXXFLAGS="$CXXFLAGS -funroll-loops -g -Wno-unknown-pragmas"
+
+if [[ "$target-platform" == *-64 ]]; then
+    export CFLAGS="$CFLAGS -mpopcnt"
+    export CXXFLAGS="$CXXFLAGS -mpopcnt"
 fi
 
 export CFLAGS="$CFLAGS -Wl,-rpath,$PREFIX/lib"
