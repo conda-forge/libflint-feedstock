@@ -40,7 +40,7 @@ test:
 
 about:
   home: http://flintlib.org
-  license: GPL v2+
+  license: GPL-2.0-or-later
   license_file: gpl-2.0.txt
   summary: 'Fast Library for Number Theory'
 
