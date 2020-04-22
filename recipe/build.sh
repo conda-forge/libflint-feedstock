@@ -10,9 +10,6 @@ if [[ "$target-platform" == *-64 ]]; then
     export CXXFLAGS="$CXXFLAGS -mpopcnt"
 fi
 
-export CFLAGS="$CFLAGS -Wl,-rpath,$PREFIX/lib"
-export CXXFLAGS="$CXXFLAGS -Wl,-rpath,$PREFIX/lib"
-
 # This is set to reduce the number of random tests run so that CIs can run 
 # tests to completion without timeouts.
 echo "int flint_test_multiplier(){return 1;}" > test_helpers.c
