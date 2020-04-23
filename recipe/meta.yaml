@@ -35,10 +35,12 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/include/flint/flint.h
-    - test -f $PREFIX/lib/libflint.a
+    - test -f $PREFIX/include/flint/flint.h   # [unix]
     - test -f $PREFIX/lib/libflint.so         # [linux]
     - test -f $PREFIX/lib/libflint.dylib      # [osx]
+    - if not exist %LIBRARY_BIN%\flint.dll exit 1   # [win]
+    - if not exist %LIBRARY_LIB%\flint.lib exit 1   # [win]
+    - if not exist %LIBRARY_INC%\flint\flint.h exit 1   # [win]
 
 about:
   home: http://flintlib.org
