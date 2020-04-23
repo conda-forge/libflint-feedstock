@@ -18,4 +18,4 @@ echo "int flint_test_multiplier(){return 1;}" > test_helpers.c
 make -j${CPU_COUNT}
 make install
 ls -al ${PREFIX}/lib
-make check -j${CPU_COUNT}
+make check
