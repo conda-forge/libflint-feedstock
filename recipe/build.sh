@@ -17,5 +17,4 @@ echo "int flint_test_multiplier(){return 1;}" > test_helpers.c
 ./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --with-ntl=$PREFIX --disable-static
 make -j${CPU_COUNT}
 make install
-#ls -al ${PREFIX}/lib
-make check
+make check -j${CPU_COUNT}
