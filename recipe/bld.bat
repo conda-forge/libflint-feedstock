@@ -14,6 +14,6 @@ cmake ^
 
 cmake --build . -- -j%CPU_COUNT%
 
-ctest -j%CPU_COUNT% --verbose --timeout 600 -E "^fmpz_poly_factor-test-t-factor$"
+ctest -j%CPU_COUNT% --verbose --timeout 600
 
 cmake --build . --target install
