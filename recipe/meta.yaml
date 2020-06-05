@@ -5,7 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/wbhart/flint2/archive/trunk.zip
+  url: http://flintlib.org/flint-{{ version }}.tar.gz
+  sha256: 9089edadd12cbbda4533ab6f58efb7565fd973b5b82a89f53f64203bc3510840
 
 build:
   number: 0
@@ -38,7 +39,7 @@ test:
     - test -f $PREFIX/include/flint/flint.h   # [unix]
     - test -f $PREFIX/lib/libflint.so         # [linux]
     - test -f $PREFIX/lib/libflint.dylib      # [osx]
-    - if not exist %LIBRARY_BIN%\flint.dll exit 1   # [win]
+    - if not exist %LIBRARY_BIN%\flint-14.dll exit 1   # [win]
     - if not exist %LIBRARY_LIB%\flint.lib exit 1   # [win]
     - if not exist %LIBRARY_INC%\flint\flint.h exit 1   # [win]
 
