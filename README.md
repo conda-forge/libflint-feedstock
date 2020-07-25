@@ -5,7 +5,7 @@ Home: http://flintlib.org
 
 Package license: LGPL-2.1-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Fast Library for Number Theory
 
