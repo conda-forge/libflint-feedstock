@@ -39,7 +39,7 @@ test:
     - test -f $PREFIX/include/flint/flint.h   # [unix]
     - test -f $PREFIX/lib/libflint.so         # [linux]
     - test -f $PREFIX/lib/libflint.dylib      # [osx]
-    - if not exist %LIBRARY_BIN%\flint-14.dll exit 1   # [win]
+    - if not exist %LIBRARY_BIN%\flint-15.dll exit 1   # [win]
     - if not exist %LIBRARY_LIB%\flint.lib exit 1   # [win]
     - if not exist %LIBRARY_INC%\flint\flint.h exit 1   # [win]
 
