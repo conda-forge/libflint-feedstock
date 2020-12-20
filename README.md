@@ -5,11 +5,9 @@ Home: http://flintlib.org
 
 Package license: LGPL-2.1-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libflint-feedstock/blob/master/LICENSE.txt)
 
 Summary: Fast Library for Number Theory
-
-
 
 Current build status
 ====================
