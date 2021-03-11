@@ -1,0 +1,3 @@
+WITH_NTL:
+  - "0"
+  - "1"   # [linux or (osx and x86_64)]

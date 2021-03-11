@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
+WITH_NTL:
+- '0'
 c_compiler:
 - clang
 c_compiler_version:
@@ -18,8 +20,6 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 mpfr:
 - '4'
-ntl:
-- 11.4.3
 pin_run_as_build:
   gmp:
     max_pin: x

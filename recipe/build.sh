@@ -14,7 +14,15 @@ export CXXFLAGS="$CXXFLAGS -funroll-loops -g -Wno-unknown-pragmas"
 # tests to completion without timeouts.
 echo "int flint_test_multiplier(){return 1;}" > test_helpers.c
 
-./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --with-ntl=$PREFIX --disable-static
+if [[ "$WITH_NTL" == 1 ]]; then
+  ./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --with-ntl=$PREFIX --disable-static
+else
+  ./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --disable-static
+fi
+
 make -j${CPU_COUNT}
 make install
-make check -j${CPU_COUNT}
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" != 1 ]]; then
+  make check -j${CPU_COUNT}
+fi
