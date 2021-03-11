@@ -17,13 +17,18 @@ source:
 
 build:
   number: {{ build }}
-  string: h{{ PKG_HASH }}_ntl_{{ build }}    # [WITH_NTL == "1"]
-  string: h{{ PKG_HASH }}_nontl_{{ build }}  # [WITH_NTL == "0"]
+  {% if WITH_NTL == "1" %}
+  string: h{{ PKG_HASH }}_ntl_{{ build }}
+  {% else %}
+  string: h{{ PKG_HASH }}_nontl_{{ build }}
+  {% endif %}
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage('libflint', max_pin='x.x') }}
+  {% if WITH_NTL == "1" and (linux or (osx and x86_64)) %}
   track_features:
-    - flint_with_nontl  # [WITH_NTL == "0" and (linux or (osx and x86_64))]
+    - flint_with_nontl
+  {% endif %}
 
 requirements:
   build:
@@ -37,13 +42,17 @@ requirements:
     - mpir              # [win]
     - pthreads-win32    # [win]
     - mpfr
-    - ntl               # [WITH_NTL=="1"]
+  {% if WITH_NTL == "1" %}
+    - ntl
+  {% endif %}
   run:
     - gmp               # [unix]
     - mpir              # [win]
     - pthreads-win32    # [win]
     - mpfr
-    - ntl               # [WITH_NTL=="1"]
+  {% if WITH_NTL == "1" %}
+    - ntl
+  {% endif %}
 
 test:
   commands:
