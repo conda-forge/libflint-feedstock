@@ -97,10 +97,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64</td>
+              <td>osx_arm64_WITH_NTL0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=536&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libflint-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libflint-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_WITH_NTL0" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_WITH_NTL1</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=536&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libflint-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_WITH_NTL1" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -132,6 +139,7 @@ Installing `libflint` from the `conda-forge` channel can be achieved by adding `
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `libflint` can be installed with:

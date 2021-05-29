@@ -14,8 +14,11 @@ jobs:
       osx_64_WITH_NTL1:
         CONFIG: osx_64_WITH_NTL1
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_:
-        CONFIG: osx_arm64_
+      osx_arm64_WITH_NTL0:
+        CONFIG: osx_arm64_WITH_NTL0
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_WITH_NTL1:
+        CONFIG: osx_arm64_WITH_NTL1
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
