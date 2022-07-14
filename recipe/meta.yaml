@@ -1,5 +1,6 @@
 {% set name = "libflint" %}
 {% set version = "2.9.0" %}
+{% set build = 0 %}
 
 {% if WITH_NTL is undefined %}
 {% set WITH_NTL = "0" %}
@@ -17,7 +18,7 @@ source:
   sha256: 2fc090d51033c93208e6c10d406397a53c983ae5343b958eb25f72a57a4ce76a
 
 build:
-  number: 0
+  number: {{ build }}
   {% if WITH_NTL == "1" %}
   string: h{{ PKG_HASH }}_ntl_{{ build }}
   {% else %}
