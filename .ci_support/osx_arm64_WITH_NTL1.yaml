@@ -5,7 +5,7 @@ WITH_NTL:
 c_compiler:
 - clang
 c_compiler_version:
-- '13'
+- '16'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -13,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '13'
+- '16'
 gmp:
 - '6'
 macos_machine:
@@ -22,11 +22,6 @@ mpfr:
 - '4'
 ntl:
 - 11.4.3
-pin_run_as_build:
-  gmp:
-    max_pin: x
-  mpfr:
-    max_pin: x
 target_platform:
 - osx-arm64
 zip_keys:
