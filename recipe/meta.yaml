@@ -39,6 +39,7 @@ requirements:
     - make              # [unix]
     - ninja             # [win]
     - cmake             # [win]
+    - pkg-config        # [win]
   host:
     - gmp               # [unix]
     - mpir              # [win]
