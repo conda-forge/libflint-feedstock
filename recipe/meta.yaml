@@ -37,26 +37,17 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
-    - make              # [unix]
-    - ninja             # [win]
-    - cmake             # [win]
-    - pkg-config        # [win]
+    - make                   # [unix]
+    - autotools_clang_conda  # [win]
   host:
-    - gmp               # [unix]
-    - mpir              # [win]
+    - gmp
     - pthreads-win32    # [win]
     - mpfr
   {% if WITH_NTL == "1" %}
     - ntl
   {% endif %}
   run:
-    - gmp               # [unix]
-    - mpir              # [win]
     - pthreads-win32    # [win]
-    - mpfr
-  {% if WITH_NTL == "1" %}
-    - ntl
-  {% endif %}
 
 test:
   commands:
