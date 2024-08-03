@@ -35,6 +35,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - make              # [unix]
     - ninja             # [win]
