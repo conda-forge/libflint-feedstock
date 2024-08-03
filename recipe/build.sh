@@ -15,6 +15,8 @@ else
   ./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --disable-static --disable-arch
 fi
 
+[[ "$target_platform" == "win-64" ]] && patch_libtool
+
 make -j${CPU_COUNT}
 make install
 
