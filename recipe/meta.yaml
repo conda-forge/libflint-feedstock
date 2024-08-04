@@ -36,10 +36,13 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    - {{ compiler('cxx') }}        # [unix]
-    - make                         # [unix]
-    - libtool                      # [unix]
-    - m4                           # [unix]
+    {% if WITH_NTL == "1" %}
+    - {{ compiler('cxx') }}
+    {% endif %}
+    - make                   # [unix]
+    - libtool                # [unix]
+    - m4                     # [unix]
+    - binutils               # [win]
     - autotools_clang_conda  # [win]
   host:
     - gmp
