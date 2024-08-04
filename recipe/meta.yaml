@@ -47,7 +47,6 @@ requirements:
   host:
     - gmp
     - mpfr
-    - m2w64-winpthreads-git  # [win]
   {% if WITH_NTL == "1" %}
     - ntl
   {% endif %}
