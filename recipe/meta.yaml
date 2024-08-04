@@ -45,13 +45,10 @@ requirements:
     - m2-make                      # [win]
   host:
     - gmp
-    - pthreads-win32               # [win]
     - mpfr
   {% if WITH_NTL == "1" %}
     - ntl
   {% endif %}
-  run:
-    - pthreads-win32               # [win]
 
 test:
   commands:
