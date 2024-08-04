@@ -40,9 +40,7 @@ requirements:
     - make                         # [unix]
     - libtool                      # [unix]
     - m4                           # [unix]
-    - m2-base                      # [win]
-    - m2-diffutils                 # [win]
-    - m2-make                      # [win]
+    - autotools_clang_conda  # [win]
   host:
     - gmp
     - mpfr
