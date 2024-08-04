@@ -38,7 +38,6 @@ requirements:
     - {{ stdlib('c') }}            # [unix]
     - {{ compiler('cxx') }}        # [unix]
     - make                         # [unix]
-    - m2-make                      # [unix]
     - libtool                      # [unix]
     - m4                           # [unix]
     - {{ compiler('m2w64_c') }}    # [win]
@@ -46,6 +45,7 @@ requirements:
     - {{ compiler('m2w64_cxx') }}  # [win]
     - m2-base                      # [win]
     - m2-diffutils                 # [win]
+    - m2-make                      # [win]
   host:
     - gmp
     - pthreads-win32               # [win]
