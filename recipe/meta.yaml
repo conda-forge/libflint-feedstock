@@ -40,16 +40,14 @@ requirements:
     - ninja             # [win]
     - cmake             # [win]
   host:
-    - gmp               # [unix]
-    - gmp              # [win]
+    - gmp
     - pthreads-win32    # [win]
     - mpfr
   {% if WITH_NTL == "1" %}
     - ntl
   {% endif %}
   run:
-    - gmp               # [unix]
-    - gmp              # [win]
+    - gmp
     - pthreads-win32    # [win]
     - mpfr
   {% if WITH_NTL == "1" %}
