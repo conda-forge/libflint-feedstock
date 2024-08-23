@@ -1,6 +1,6 @@
 {% set name = "libflint" %}
 {% set version = "3.0.1" %}
-{% set build = 102 %}
+{% set build = 103 %}
 
 package:
   name: {{ name|lower }}
@@ -11,6 +11,7 @@ source:
   sha256: 7b311a00503a863881eb8177dbeb84322f29399f3d7d72f3b1a4c9ba1d5794b4
   patches:
     - 0001-Fix-finding-winpthreads-on-windows.patch
+    - fix_flint_version.patch
 
 build:
   number: {{ build }}
