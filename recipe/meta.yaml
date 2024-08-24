@@ -43,6 +43,7 @@ requirements:
     {% endif %}
     - libtool                # [unix]
     - m4                     # [unix]
+    - make                   # [unix]
     - binutils               # [win]
     - autotools_clang_conda  # [win]
   host:
