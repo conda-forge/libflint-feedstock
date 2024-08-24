@@ -25,6 +25,8 @@ build:
   string: h{{ PKG_HASH }}_nontl_{{ build }}
   {% endif %}
   skip: true  # [win and vc<14]
+  # The Windows build has been temporarily disabled. The cmake build we used before is not supported anymore and we couldn't figure out how to make autotools_clang_conda work here., see https://github.com/conda-forge/libflint-feedstock/pull/32/.
+  skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('libflint', max_pin='x.x') }}
   {% if WITH_NTL == "0" and (linux or osx) %}
