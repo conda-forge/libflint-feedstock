@@ -39,7 +39,6 @@ requirements:
     {% if WITH_NTL == "1" %}
     - {{ compiler('cxx') }}
     {% endif %}
-    - make                   # [unix]
     - libtool                # [unix]
     - m4                     # [unix]
     - binutils               # [win]
