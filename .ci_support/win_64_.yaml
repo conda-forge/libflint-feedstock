@@ -1,0 +1,22 @@
+WITH_NTL:
+- '0'
+c_compiler:
+- vs2019
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2019
+gmp:
+- '6'
+libflint:
+- '3.0'
+mpfr:
+- '4'
+ntl:
+- 11.4.3
+target_platform:
+- win-64
