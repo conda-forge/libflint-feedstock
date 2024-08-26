@@ -22,5 +22,7 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 mpfr:
 - '4'
+ntl:
+- 11.4.3
 target_platform:
 - osx-64

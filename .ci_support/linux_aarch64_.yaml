@@ -24,6 +24,8 @@ libflint:
 - '3.0'
 mpfr:
 - '4'
+ntl:
+- 11.4.3
 target_platform:
 - linux-aarch64
 zip_keys:
