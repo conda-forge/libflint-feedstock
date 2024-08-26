@@ -16,6 +16,8 @@ build:
   number: {{ build }}
   run_exports:
     - {{ pin_subpackage('libflint', max_pin='x.x') }}
+  ignore_run_exports_from:
+    - ntl  # ntl part is header only
 
 requirements:
   build:
@@ -29,6 +31,7 @@ requirements:
     - pkg-config             # [win]
   host:
     - winpthreads-devel      # [win]
+    - ntl                    # [not win]
     - gmp
     - mpfr
 
