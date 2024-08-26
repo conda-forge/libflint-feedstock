@@ -1,6 +1,3 @@
-WITH_NTL:
-  - "0"
-  - "1"   # [linux or osx]
 # aligned_alloc is not available on macOS 10.9.
 # https://stackoverflow.com/a/76984907/812379
 MACOSX_SDK_VERSION:  # [osx]

@@ -1,13 +1,7 @@
 {% set name = "libflint" %}
 {% set version = "3.1.2" %}
-{% set build = 1 %}
+{% set build = 101 %}
 
-{% if WITH_NTL is undefined %}
-{% set WITH_NTL = "0" %}
-{% endif %}
-{% if WITH_NTL == "1" %}
-{% set build = build + 100 %}
-{% endif %}
 
 package:
   name: {{ name|lower }}
@@ -19,25 +13,13 @@ source:
 
 build:
   number: {{ build }}
-  {% if WITH_NTL == "1" %}
-  string: h{{ PKG_HASH }}_ntl_{{ build }}
-  {% else %}
-  string: h{{ PKG_HASH }}_nontl_{{ build }}
-  {% endif %}
   run_exports:
     - {{ pin_subpackage('libflint', max_pin='x.x') }}
-  {% if WITH_NTL == "0" and (linux or osx) %}
-  track_features:
-    - flint_with_nontl
-  {% endif %}
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    {% if WITH_NTL == "1" %}
-    - {{ compiler('cxx') }}
-    {% endif %}
     - libtool                # [unix]
     - m4                     # [unix]
     - make                   # [unix]
@@ -47,9 +29,6 @@ requirements:
     - winpthreads-devel      # [win]
     - gmp
     - mpfr
-  {% if WITH_NTL == "1" %}
-    - ntl
-  {% endif %}
 
 test:
   commands:
