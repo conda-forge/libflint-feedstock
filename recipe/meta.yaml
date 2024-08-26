@@ -11,7 +11,6 @@ source:
   sha256: fdb3a431a37464834acff3bdc145f4fe8d0f951dd5327c4c6f93f4cbac5c2700
   patches:
     - 0001-Fix-finding-winpthreads-on-windows.patch
-    - 0002-use-thread_local-on-windows.patch    # [win]
 
 build:
   number: {{ build }}

@@ -2,3 +2,5 @@
 # https://stackoverflow.com/a/76984907/812379
 MACOSX_SDK_VERSION:  # [osx]
   - "10.15"          # [osx]
+c_compiler:          # [win]
+  - vs2022           # [win]
