@@ -1,7 +1,5 @@
 BUILD:
 - aarch64-conda_cos7-linux-gnu
-WITH_NTL:
-- '1'
 c_compiler:
 - gcc
 c_compiler_version:
@@ -18,10 +16,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-cxx_compiler:
-- gxx
-cxx_compiler_version:
-- '13'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 gmp:
@@ -30,12 +24,8 @@ libflint:
 - '3.0'
 mpfr:
 - '4'
-ntl:
-- 11.4.3
 target_platform:
 - linux-aarch64
 zip_keys:
-- - c_compiler_version
-  - cxx_compiler_version
 - - c_stdlib_version
   - cdt_name
