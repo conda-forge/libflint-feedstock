@@ -1,6 +1,8 @@
 REM reduce the number of tests
 echo int flint_test_multiplier(){return 1;} > test_helpers.c
 
+set "CFLAGS=%CFLAGS% /experimental:c11atomics"
+
 mkdir build
 cd build
 
