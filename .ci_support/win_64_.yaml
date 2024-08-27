@@ -1,0 +1,18 @@
+c_compiler:
+- vs2022
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+gmp:
+- '6'
+libflint:
+- '3.0'
+mpfr:
+- '4'
+ntl:
+- 11.4.3
+target_platform:
+- win-64

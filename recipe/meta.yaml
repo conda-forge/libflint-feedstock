@@ -1,13 +1,6 @@
 {% set name = "libflint" %}
 {% set version = "3.1.2" %}
-{% set build = 0 %}
-
-{% if WITH_NTL is undefined %}
-{% set WITH_NTL = "0" %}
-{% endif %}
-{% if WITH_NTL == "1" %}
-{% set build = build + 100 %}
-{% endif %}
+{% set build = 101 %}
 
 package:
   name: {{ name|lower }}
@@ -16,49 +9,38 @@ package:
 source:
   url: https://flintlib.org/flint-{{ version }}.tar.gz
   sha256: fdb3a431a37464834acff3bdc145f4fe8d0f951dd5327c4c6f93f4cbac5c2700
+  patches:
+    - 0001-Fix-finding-winpthreads-on-windows.patch
 
 build:
   number: {{ build }}
-  {% if WITH_NTL == "1" %}
-  string: h{{ PKG_HASH }}_ntl_{{ build }}
-  {% else %}
-  string: h{{ PKG_HASH }}_nontl_{{ build }}
-  {% endif %}
-  skip: true  # [win and vc<14]
-  # The Windows build has been temporarily disabled. The cmake build we used before is not supported anymore and we couldn't figure out how to make autotools_clang_conda work here., see https://github.com/conda-forge/libflint-feedstock/pull/32/.
-  skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('libflint', max_pin='x.x') }}
-  {% if WITH_NTL == "0" and (linux or osx) %}
-  track_features:
-    - flint_with_nontl
-  {% endif %}
+  ignore_run_exports_from:
+    - ntl  # ntl part is header only
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    {% if WITH_NTL == "1" %}
-    - {{ compiler('cxx') }}
-    {% endif %}
     - libtool                # [unix]
     - m4                     # [unix]
     - make                   # [unix]
-    - binutils               # [win]
-    - autotools_clang_conda  # [win]
+    - cmake                  # [win]
+    - ninja                  # [win]
+    - pkg-config             # [win]
   host:
+    - winpthreads-devel      # [win]
+    - ntl                    # [not win]
     - gmp
     - mpfr
-  {% if WITH_NTL == "1" %}
-    - ntl
-  {% endif %}
 
 test:
   commands:
     - test -f $PREFIX/include/flint/flint.h   # [unix]
     - test -f $PREFIX/lib/libflint.so         # [linux]
     - test -f $PREFIX/lib/libflint.dylib      # [osx]
-    - if not exist %LIBRARY_BIN%\flint-18.dll exit 1   # [win]
+    - if not exist %LIBRARY_BIN%\flint-19.dll exit 1   # [win]
     - if not exist %LIBRARY_LIB%\flint.lib exit 1   # [win]
     - if not exist %LIBRARY_INC%\flint\flint.h exit 1   # [win]
 

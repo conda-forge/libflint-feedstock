@@ -9,13 +9,7 @@ export CXXFLAGS="$CXXFLAGS -funroll-loops -g -Wno-unknown-pragmas"
 # tests to completion without timeouts.
 echo "int flint_test_multiplier(){return 1;}" > test_helpers.c
 
-if [[ "$target_platform" == "win-64" ]]; then
-    ./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --disable-static --disable-arch --disable-pthread
-elif [[ "$WITH_NTL" == 1 ]]; then
-    ./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --with-ntl=$PREFIX --disable-static --disable-arch
-else
-    ./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --disable-static --disable-arch
-fi
+./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --disable-static --disable-arch
 
 [[ "$target_platform" == "win-64" ]] && patch_libtool
 
