@@ -1,7 +1,7 @@
 REM reduce the number of tests
 echo int flint_test_multiplier(){return 1;} > test_helpers.c
 
-set "CFLAGS=%CFLAGS% /experimental:c11atomics"
+set "CFLAGS=%CFLAGS% /experimental:c11atomics /std:c11"
 
 copy %LIBRARY_LIB%\libpthread.dll.a %LIBRARY_LIB%\pthread.lib
 
