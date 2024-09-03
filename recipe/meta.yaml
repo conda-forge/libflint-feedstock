@@ -1,6 +1,6 @@
 {% set name = "libflint" %}
-{% set version = "3.1.2" %}
-{% set build = 101 %}
+{% set version = "3.0.1" %}
+{% set build = 102 %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://flintlib.org/flint-{{ version }}.tar.gz
-  sha256: fdb3a431a37464834acff3bdc145f4fe8d0f951dd5327c4c6f93f4cbac5c2700
+  sha256: 7b311a00503a863881eb8177dbeb84322f29399f3d7d72f3b1a4c9ba1d5794b4
   patches:
     - 0001-Fix-finding-winpthreads-on-windows.patch
 
@@ -40,16 +40,14 @@ test:
     - test -f $PREFIX/include/flint/flint.h   # [unix]
     - test -f $PREFIX/lib/libflint.so         # [linux]
     - test -f $PREFIX/lib/libflint.dylib      # [osx]
-    - if not exist %LIBRARY_BIN%\flint-19.dll exit 1   # [win]
+    - if not exist %LIBRARY_BIN%\flint-18.dll exit 1   # [win]
     - if not exist %LIBRARY_LIB%\flint.lib exit 1   # [win]
     - if not exist %LIBRARY_INC%\flint\flint.h exit 1   # [win]
 
 about:
   home: http://flintlib.org
-  license: LGPL-3.0-or-later
-  license_file:
-    - COPYING
-    - COPYING.LESSER
+  license: LGPL-2.1-or-later
+  license_file: LICENSE
   summary: Fast Library for Number Theory
 
 extra:
