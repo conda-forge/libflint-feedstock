@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/flintlib/flint/releases/download/v{{ version }}/flint-{{ version }}.tar.gz
-  sha256: 96637ba9de43397d06657deefe8e6dee9d226992b5526bb1c9a9d563b983e027
+  sha256: 6d182c4a05d3d6bfc611565d6331d02f94066a3be32df36ed880264afa9c30f4
 
 build:
   number: {{ build }}
