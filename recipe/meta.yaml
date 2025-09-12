@@ -9,8 +9,6 @@ package:
 source:
   url: https://github.com/flintlib/flint/releases/download/v{{ version }}/flint-{{ version }}.tar.gz
   sha256: d9ae0f1318253727068270dbfa3c4b55155e3f4b7be6ca9c056e58f2838f15b3
-  patches:   # [win]
-    - 0001-avx.patch  # [win]
 
 build:
   number: {{ build }}
