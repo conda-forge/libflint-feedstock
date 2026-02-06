@@ -13,6 +13,6 @@ libflint:
 mpfr:
 - '4'
 ntl:
-- 11.4.3
+- 11.6.0
 target_platform:
 - win-64
