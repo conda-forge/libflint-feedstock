@@ -1,6 +1,6 @@
 {% set name = "libflint" %}
-{% set version = "3.3.1" %}
-{% set build = 1 %}
+{% set version = "3.4.0" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/flintlib/flint/releases/download/v{{ version }}/flint-{{ version }}.tar.gz
-  sha256: 64d70e513076cfa971e0410b58c1da5d35112913e9a56b44e2c681b459d3eafb
+  sha256: 9497679804dead926e3affeb8d4c58739d1c7684d60c2c12827550d28e454a33
 
 build:
   number: {{ build }}
@@ -38,7 +38,7 @@ test:
     - test -f $PREFIX/include/flint/flint.h   # [unix]
     - test -f $PREFIX/lib/libflint.so         # [linux]
     - test -f $PREFIX/lib/libflint.dylib      # [osx]
-    - if not exist %LIBRARY_BIN%\flint-21.dll exit 1   # [win]
+    - if not exist %LIBRARY_BIN%\flint-22.dll exit 1   # [win]
     - if not exist %LIBRARY_LIB%\flint.lib exit 1   # [win]
     - if not exist %LIBRARY_INC%\flint\flint.h exit 1   # [win]
 
