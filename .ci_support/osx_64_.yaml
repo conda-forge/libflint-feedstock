@@ -17,7 +17,7 @@ channel_targets:
 gmp:
 - '6'
 libflint:
-- '3.2'
+- '3.3'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 mpfr:
