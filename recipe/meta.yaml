@@ -1,5 +1,5 @@
 {% set name = "libflint" %}
-{% set version = "3.5.0" %}
+{% set version = "3.6.0" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/flintlib/flint/releases/download/v{{ version }}/flint-{{ version }}.tar.gz
-  sha256: 3982f385f00610a944e0152eb0a29893b2366fa640e8f5f3076c47564cf7e2a6
+  sha256: b95e2c7792f5eea4a1c8d2d42c4098434756832e57a094b295eb5dfdc9b4c36b
 
 build:
   number: {{ build }}
