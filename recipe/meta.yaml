@@ -26,7 +26,7 @@ requirements:
     - make                   # [unix]
     - cmake                  # [win]
     - ninja                  # [win]
-    - pkg-config             # [win]
+    - pkgconf                # [win]
   host:
     - winpthreads-devel      # [win]
     - ntl                    # [not win]
